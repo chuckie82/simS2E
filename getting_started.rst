@@ -7,7 +7,7 @@ Getting started
 
 .. _installing-docdir:
 
-Installing your doc directory
+Installing your start-to-end package
 =============================
 
 You may already have sphinx `sphinx <http://sphinx.pocoo.org/>`_
@@ -96,7 +96,7 @@ When you reload the page by refreshing your browser pointing to
 Note we used the image directive to include to the screenshot above
 with::
 
-  .. image:: _static/basic_screenshot.png
+  .. image:: _static/drawing5.png
 
 
 Next we'll customize the look and feel of our site to give it a logo,
