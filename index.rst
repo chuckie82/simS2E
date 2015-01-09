@@ -16,6 +16,7 @@ Contents:
    propagation.rst
    photon_matter_interaction.rst
    coherent_diffraction.rst
+   orientation_determination.rst
 
 .. image:: _static/protein.png
 
