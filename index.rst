@@ -13,6 +13,7 @@ Contents:
 
    getting_started.rst
    fel_source_simulation.rst
+   propagation.rst
 
 .. image:: _static/protein.png
 
