@@ -12,7 +12,7 @@ Contents:
    :maxdepth: 2
 
    getting_started.rst
-   ipython_directive.rst
+   fel_source_simulation.rst
 
 .. image:: _static/protein.png
 
