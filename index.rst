@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    getting_started.rst
+   ipython_directive.rst
 
 Indices and tables
 ==================
