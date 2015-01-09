@@ -17,8 +17,8 @@ Data access
 
 Data in archive can be exported using web browser. Initial FEL source can be downloaded from here:
 
-`web site <http://dcache-door-photon03.desy.de:2980/>`_
+`FEL source web site <http://dcache-door-photon03.desy.de:2980/>`_
 
 with authentication (xfel/desy account)
 
-`web site <https://dcache-door-photon03:2880/XFEL/2014/SIM/>`_
+`FEL web site <https://dcache-door-photon03:2880/XFEL/2014/SIM/>`_
