@@ -15,10 +15,17 @@
 import sys
 import os
 
+ON_RTD = os.environ.get('READTHEDOCS', None) == 'True'
+if ON_RTD:
+    # Mock the presence of matplotlib, which we don't have on RTD
+    # see
+    # http://read-the-docs.readthedocs.org/en/latest/faq.html
+    tags.add('rtd')
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.append(os.path.abspath('sphinxext'))
+sys.path.insert(0, os.path.abspath('./sphinxext'))
 
 # -- General configuration ------------------------------------------------
 
@@ -37,6 +44,14 @@ extensions = [
           'sphinx.ext.autodoc',
           'sphinx.ext.doctest',
           'numpydoc']
+
+if ON_RTD:
+    # Remove extensions not currently supported on RTD
+    extensions.remove('matplotlib.sphinxext.only_directives')
+    extensions.remove('matplotlib.sphinxext.mathmpl')
+    extensions.remove('matplotlib.sphinxext.plot_directive')
+    extensions.remove('IPython.sphinxext.ipython_directive')
+    extensions.remove('IPython.sphinxext.ipython_console_highlighting')
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
