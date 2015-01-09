@@ -15,6 +15,7 @@ Contents:
    fel_source_simulation.rst
    propagation.rst
    photon_matter_interaction.rst
+   coherent_diffraction.rst
 
 .. image:: _static/protein.png
 
