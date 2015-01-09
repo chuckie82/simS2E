@@ -14,6 +14,7 @@ Contents:
    getting_started.rst
    fel_source_simulation.rst
    propagation.rst
+   photon_matter_interaction.rst
 
 .. image:: _static/protein.png
 
