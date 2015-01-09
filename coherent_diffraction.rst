@@ -12,11 +12,19 @@ Input/Output data description
 
 The input/output data is expected in hdf5 format, and the glossary can be found below. Coherent diffraction module is responsible for reading in and writing out in the format specified below.
 
-+------------------------+------------+----------+----------+
-| Header row, column 1   | Header 2   | Header 3 | Header 4 |
-| (header rows optional) |            |          |          |
-+========================+============+==========+==========+
-| body row 1, column 1   | column 2   | column 3 | column 4 |
-+------------------------+------------+----------+----------+
-| body row 2             | ...        | ...      |          |
-+------------------------+------------+----------+----------+
++---------------+---------------------------------------------------------+----------+
+| Field name    | Description                                             | DataType |
++===============+=========================================================+==========+
+| --input_dir   | Input directory where pmi_out files are stored          | String   |
++---------------+---------------------------------------------------------+----------+
+| --output_dir  | Output directory where diffr_out files will be stored   | String   |
++---------------+---------------------------------------------------------+----------+
+
+=====  =====  =======
+A      B      A and B
+=====  =====  =======
+False  False  False
+True   False  False
+False  True   False
+True   True   True
+=====  =====  =======
