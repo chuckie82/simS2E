@@ -7,6 +7,9 @@ Getting started
 
 .. _installing-docdir:
 
+.. image:: _static/diffrVol.png
+    :scale: 50 %
+
 Installing your start-to-end package
 =============================
 
@@ -39,7 +42,8 @@ anything, let's see if we can build some html::
 If you now point your browser to :file:`_build/html/index.html`, you
 should see a basic sphinx site.
 
-.. image:: _static/drawing5.png
+.. image:: _static/undulator.png
+    :scale: 50 %
 
 .. _fetching-the-data:
 
@@ -92,15 +96,4 @@ When you reload the page by refreshing your browser pointing to
 :file:`_build/html/index.html`, you should see a link to the
 "Getting Started" docs, and in there this page with the screenshot.
 `Voila!`
-
-Note we used the image directive to include to the screenshot above
-with::
-
-  .. image:: _static/drawing5.png
-
-
-Next we'll customize the look and feel of our site to give it a logo,
-some custom css, and update the navigation panels to look more like
-the `sphinx <http://sphinx.pocoo.org/>`_ site itself -- see
-:ref:`custom_look`.
 

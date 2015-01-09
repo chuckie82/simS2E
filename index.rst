@@ -14,6 +14,8 @@ Contents:
    getting_started.rst
    ipython_directive.rst
 
+.. image:: _static/protein.png
+
 Indices and tables
 ==================
 
