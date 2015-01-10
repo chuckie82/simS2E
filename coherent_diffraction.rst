@@ -91,6 +91,24 @@ diffr_out_XXXXXXX.h5 (Output HDF glossary)
 | version                  | hdf5 format version                                                 | Float     | 0.1      |
 +--------------------------+---------------------------------------------------------------------+-----------+----------+
 
+Diagnostic
+----------
 
+Python script displays /data/data and /data/diffr at completion of the module execution
 
+ 
+Scaling behaviour of SingFEL
+----------------------------
 
+Calculation time using single processor vs number of atoms is non-linear, perhaps quadratic.
+
+Detector number of pixels: 131x131
+
+Benzoic acid: 15 atoms
+Chignolin: 2484 atoms
+2YBE: 3240 atoms
+2NIP: 4735 atoms
+4AS4: 4963 atoms
+
+.. image:: _static/singfel_speed.png
+    :scale: 50 %
