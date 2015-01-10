@@ -47,4 +47,6 @@ To update the document on the web, just push your changes::
 Installing your start-to-end package
 ====================================
 
+More instructions to come...
+
 
