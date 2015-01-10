@@ -111,4 +111,4 @@ Chignolin: 2484 atoms
 4AS4: 4963 atoms
 
 .. image:: _static/singfel_speed.png
-    :scale: 50 %
+    :scale: 100 %
