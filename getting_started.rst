@@ -33,7 +33,13 @@ Let's see if we can build our html::
   make html
 
 If you now point your browser to :file:`_build/html/index.html`, you
-should see a basic sphinx site.
+should see the site.
+
+To update the document on the web, just push your changes::
+
+   git add *.rst
+   git commit -m "Update all documents"
+   git push -u origin master
 
 .. image:: _static/undulator.png
     :scale: 33 %
