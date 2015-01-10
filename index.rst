@@ -20,6 +20,7 @@ Contents:
    phasing.rst
 
 .. image:: _static/protein.png
+    :scale: 30 %
 
 Indices and tables
 ==================
