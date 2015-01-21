@@ -94,7 +94,7 @@ diffr_out_XXXXXXX.h5 (Output HDF glossary)
 Diagnostic
 ----------
 
-Python script displays /data/data and /data/diffr at completion of the module execution
+Python script displays /data/data and /data/diffr at completion of the module execution.
 
  
 Scaling behaviour of SingFEL
