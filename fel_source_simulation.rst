@@ -37,13 +37,13 @@ FELsource_out_XXXXXXX.h5 (Output HDF glossary)
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
 | Field name               | Description                                                             | Data type | Units    |
 +==========================+=========================================================================+===========+==========+
-| data/                    |                                                                         |           |          |
+| **data/**                |                                                                         |           |          |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
 | data/arrEhor             | Complex EM field written in 4D array, horizontal polarization           | Float     |          |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
 | data/arrEver             | Complex EM field written in 4D array, vertical polarization             | Float     |          |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
-| params/                  | Parameters for wavefront propagation                                    |           |          |
+| **params/**              | Parameters for wavefront propagation                                    |           |          |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
 | params/Mesh/nSlices      | Numbers of points vs photon energy/time for the pulse                   | Int       |          |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
@@ -89,7 +89,7 @@ FELsource_out_XXXXXXX.h5 (Output HDF glossary)
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
 | params/yCentre           | Vertical transverse coordinates of wavefront instant 'source center'    | Float     | m        |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
-| history/parent/info/     | Information about input data                                            |           |          |
+| **history/parent/info/** | **Information about input data**                                        |           |          |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
 | history/parent/info/     | Contact Information                                                     | String    |          |
 | contact                  |                                                                         |           |          |
@@ -103,7 +103,7 @@ FELsource_out_XXXXXXX.h5 (Output HDF glossary)
 | history/parent/info/     | Package version                                                         | String    |          |
 | package_version          |                                                                         |           |          |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
-| misc/                    | Complimentary information                                               |           |          |
+| **misc/**                | **Complimentary information**                                               |           |          |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
 | history/parent/misc/     | FELsource_params_FAST2XY.txt used for post-processing FAST output       | String    |          |
 | FAST2XY.DAT              |                                                                         |           |          |
@@ -122,7 +122,7 @@ FELsource_out_XXXXXXX.h5 (Output HDF glossary)
 | history/parent/misc/     | FEL pulse temporal structure, instantaneous power P(\tau)               | Float     |          |
 | temporal_struct          |                                                                         |           |          |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
-| version                  | hdf5 format version                                                     | Float     | 0.1      |
+| **version**              | **hdf5 format version**                                                 | Float     | 0.1      |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
 
 Diagnostic (diagnostic_felsrc.py)
