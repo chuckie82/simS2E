@@ -21,7 +21,7 @@ pmi_out_<7 digit ID>.h5 (Output HDF glossary)
 +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------+----------+
 | data/snp_<7 digit index>/ff       | Atomic form factor in 2D array (number of unique ions x length of atomFormFactorQ)                 | Float     |          |
 +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------+----------+
-| data/snp_<7 digit index>/halfQ    | Reciprocal space spanned by the atomic form factor in 1D array (number of samples of reciprocal q) | Float     | 1/A      |
+| data/snp_<7 digit index>/halfQ    | Reciprocal space spanned by the atomic form factor in 1D array (number of samples of reciprocal q) | Float     | 1/Å      |
 +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------+----------+
 | data/snp_<7 digit index>/Nph      | Numbers of photons in the beam                                                                     | Int       | ph       |
 +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------+----------+
@@ -33,7 +33,7 @@ pmi_out_<7 digit ID>.h5 (Output HDF glossary)
 +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------+----------+
 | data/snp_<7 digit index>/xyz      | List of indices of ff for each atom in Z                                                           | Int       |          |
 +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------+----------+
-| data/snp_<7 digit index>/Sq_halfQ | Reciprocal space spanned by the Compton scattering in 1D array (number of samples of reciprocal q) | Float     | 1/A      |
+| data/snp_<7 digit index>/Sq_halfQ | Reciprocal space spanned by the Compton scattering in 1D array (number of samples of reciprocal q) | Float     | 1/Å      |
 +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------+----------+
 | data/snp_<7 digit index>/Sq_bound | Compton scattering by bound electrons in 1D array (length of Sq_Q)                                 | Float     |          |
 +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------+----------+
