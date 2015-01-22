@@ -103,7 +103,7 @@ FELsource_out_<7 digit ID>.h5 (Output HDF glossary)
 | history/parent/info/     | Package version                                                         | String    |          |
 | package_version          |                                                                         |           |          |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
-| **misc/**                | **Complimentary information**                                               |           |          |
+| **misc/**                | **Complimentary information**                                           |           |          |
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
 | history/parent/misc/     | FELsource_params_FAST2XY.txt used for post-processing FAST output       | String    |          |
 | FAST2XY.DAT              |                                                                         |           |          |
