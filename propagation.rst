@@ -12,7 +12,7 @@ Input data description
 
 The input data is expected in hdf5 format, and the glossary can be found in the link below.
 
-prop_out_XXXXXXX.h5 (Output HDF glossary)
+prop_out_<7 digit ID>.h5 (Output HDF glossary)
 -----------------------------------------
 
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+

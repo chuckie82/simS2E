@@ -31,7 +31,7 @@ Output data description
 The output data is expected in hdf5 format, and the glossary can be found below. FEL source module is responsible for writing out in the format specified below.
 
 
-FELsource_out_XXXXXXX.h5 (Output HDF glossary)
+FELsource_out_<7 digit ID>.h5 (Output HDF glossary)
 ----------------------------------------------
 
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
@@ -131,4 +131,4 @@ Fig.1. Pulse irradiance XY map (number of photons per pixel), the title contains
 
 Fig.2. Pulse time structure, the title contains the pulse energy value. 
 
- 
+
