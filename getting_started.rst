@@ -7,8 +7,8 @@ Getting started
 
 .. _installing-docdir:
 
-.. image:: _static/pmi.png
-    :scale: 33 %
+.. image:: _static/pmi_rsz.png
+    :scale: 100 %
 
 Setting up Sphinx for documenting start-to-end simulation
 =========================================================
@@ -41,8 +41,8 @@ To update the document on the web, just push your changes::
    git commit -m "Update all documents"
    git push -u origin master
 
-.. image:: _static/undulator.png
-    :scale: 33 %
+.. image:: _static/undulator_rsz.png
+    :scale: 100 %
 
 Installing your start-to-end package
 ====================================
