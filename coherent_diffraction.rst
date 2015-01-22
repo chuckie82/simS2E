@@ -14,23 +14,25 @@ The input/output data is expected in hdf5 format, and the glossary can be found 
 diffr_params_SingFEL (Input Parameter glossary)
 -----------------------------------------------
 
-===============  ==========================================================  ==========
-Field name       Description                                                 DataType
-===============  ==========================================================  ==========
---input_dir      Input directory where pmi_out files are stored              String
---output_dir     Output directory where diffr_out files will be stored       String
---config_file    Full path and filename of this file                         String 	 
--b               Experimental beam file                                      String 	 
--g               Experimental geometry file                                  String 	 
---sliceInterval  Interval to calculates diffraction                          Int 	 
---numSlices      Number of time slices to use for calculating diffraction    Int 	 
---pmiStartID     Start ID of PMI trajectory                                  Int 	 
---pmiEndID       End ID of PMI trajectory                                    Int 	 
---dpID           Diffraction pattern index for current pmiID                 Int 	 
---numDP          Number of diffraction patterns to generate per pmiID        Int 	 
---USE_GPU        Options to use GPU (1) or not (0)                           Int  	 
-version          SingFEL version                                             0.1
-===============  ==========================================================  ==========
+==================  ==========================================================  ==========
+Field name          Description                                                 DataType
+==================  ==========================================================  ==========
+--input_dir         Input directory where pmi_out files are stored              String
+--output_dir        Output directory where diffr_out files will be stored       String
+--config_file       Full path and filename of this file                         String 	 
+-b                  Experimental beam file                                      String 	 
+-g                  Experimental geometry file                                  String 	 
+--uniformRotation   Rotations are selected uniformly in given rotation space    Int
+--calculateCompton  Calculate Compton scattering in diffraction pattern         Int
+--sliceInterval     Interval to calculates diffraction                          Int 	 
+--numSlices         Number of time slices to use for calculating diffraction    Int 	 
+--pmiStartID        Start ID of PMI trajectory                                  Int 	 
+--pmiEndID          End ID of PMI trajectory                                    Int 	 
+--dpID              Diffraction pattern index for current pmiID                 Int 	 
+--numDP             Number of diffraction patterns to generate per pmiID        Int 	 
+--USE_GPU           Options to use GPU (1) or not (0)                           Int  	 
+version             SingFEL version                                             0.1
+==================  ==========================================================  ==========
 
 diffr_out_<7 digit ID>.h5 (Output HDF glossary)
 -----------------------------------------------
