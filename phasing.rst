@@ -3,17 +3,17 @@
 .. image:: _static/protein.png
     :scale: 33 %
 
-=================
+
 Phasing
-=================
+=======
 
 Input/Output data description
------------------
+-----------------------------
 
 The input/output data is expected in hdf5 format, and the glossary can be found below. Phasing module is responsible for reading in and writing out in the format specified below.
 
 phase_out_<7 digit ID>.h5 (Output HDF glossary)
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +--------------------------+---------------------------------------------------------------------+-----------+----------+
 | Field name               | Description                                                         | Data type | Units    |

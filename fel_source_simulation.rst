@@ -3,17 +3,16 @@
 .. image:: _static/undulator.png
     :scale: 33 %
 
-=================
 FEL source simulation
-=================
+=====================
 
 Introduction
------------------
+------------
 
 Documentation for FEL source simulation can be found on this page.
 
 Data access
------------------
+-----------
 
 Data in archive can be exported using web browser. Initial FEL source can be downloaded from here:
 
@@ -25,14 +24,15 @@ with authentication (xfel/desy account)
 
 If you use this dataset, please acknowledge blah blah blah ...
 
+
 Output data description
------------------
+-----------------------
 
 The output data is expected in hdf5 format, and the glossary can be found below. FEL source module is responsible for writing out in the format specified below.
 
 
 FELsource_out_<7 digit ID>.h5 (Output HDF glossary)
-----------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
 | Field name               | Description                                                             | Data type | Units    |

@@ -3,9 +3,8 @@
 .. image:: _static/optics.png
     :scale: 33 %
 
-=================
 Propagation, including optics
-=================
+=============================
 
 Input data description
 ----------------------
@@ -13,7 +12,7 @@ Input data description
 The input data is expected in hdf5 format, and the glossary can be found in the link below.
 
 prop_out_<7 digit ID>.h5 (Output HDF glossary)
------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
 | Field name               | Description                                                             | Data type | Units    |
