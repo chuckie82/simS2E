@@ -1,7 +1,7 @@
 .. _photon_matter_interaction:
 
-.. image:: _static/pmi.png
-    :scale: 33 %
+.. image:: _static/pmi_rsz.png
+    :scale: 100 %
 
 Photon Matter Interaction
 =========================

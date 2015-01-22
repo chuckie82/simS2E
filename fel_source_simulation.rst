@@ -1,7 +1,7 @@
 .. _fel_source_simulation:
 
-.. image:: _static/undulator.png
-    :scale: 33 %
+.. image:: _static/undulator_rsz.png
+    :scale: 100 %
 
 FEL source simulation
 =====================

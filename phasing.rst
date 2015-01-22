@@ -1,7 +1,7 @@
 .. _phasing:
 
-.. image:: _static/protein.png
-    :scale: 33 %
+.. image:: _static/protein_rsz.png
+    :scale: 100 %
 
 
 Phasing

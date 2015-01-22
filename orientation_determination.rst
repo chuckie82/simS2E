@@ -1,7 +1,7 @@
 .. _orientation_determination:
 
-.. image:: _static/diffrVol.png
-    :scale: 33 %
+.. image:: _static/diffrVol_rsz.png
+    :scale: 100 %
 
 Orientation Determination
 =========================

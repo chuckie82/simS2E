@@ -1,7 +1,7 @@
 .. _coherent_diffraction:
 
-.. image:: _static/detector.png
-    :scale: 33 %
+.. image:: _static/detector_rsz.png
+    :scale: 100 %
 
 Coherent Diffraction
 ====================
