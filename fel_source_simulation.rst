@@ -32,7 +32,7 @@ The output data is expected in hdf5 format, and the glossary can be found below.
 
 
 FELsource_out_XXXXXXX.h5 (Output HDF glossary)
-------------------------------------------
+----------------------------------------------
 
 +--------------------------+-------------------------------------------------------------------------+-----------+----------+
 | Field name               | Description                                                             | Data type | Units    |
