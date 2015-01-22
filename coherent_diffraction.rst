@@ -12,7 +12,7 @@ Input/Output data description
 The input/output data is expected in hdf5 format, and the glossary can be found below. Coherent diffraction module is responsible for reading in and writing out in the format specified below.
 
 diffr_params_SingFEL (Input Parameter glossary)
------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ==================  ==========================================================  ==========
 Field name          Description                                                 DataType
@@ -35,7 +35,7 @@ version             SingFEL version                                             
 ==================  ==========================================================  ==========
 
 diffr_out_<7 digit ID>.h5 (Output HDF glossary)
------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +--------------------------+---------------------------------------------------------------------+-----------+----------+
 | Field name               | Description                                                         | Data type | Units    |
