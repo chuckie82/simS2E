@@ -6,7 +6,7 @@
 Welcome to myS2E's documentation!!!
 ===================================
 
-[ Documentation is under construction ]
+**[ Documentation is under construction ]**
 
 Contents:
 
