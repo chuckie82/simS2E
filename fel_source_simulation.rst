@@ -22,8 +22,9 @@ with authentication (xfel/desy account)
 
 `FEL source web site <https://dcache-door-photon03:2880/XFEL/2014/SIM/>`_
 
-If you use this dataset, please acknowledge::
-E. L. Saldin, E. A. Schneidmiller, and M. V. Yurkov. *Nucl. Instrum. and Methods*, A(429):233, 1999.
+If you use this dataset, please acknowledge [SALDIN99]_.
+
+.. [SALDIN99] E. L. Saldin, E. A. Schneidmiller, and M. V. Yurkov. *Nucl. Instrum. and Methods*, A(429):233, 1999.
 
 
 Output data description
