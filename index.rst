@@ -1,9 +1,9 @@
-.. myS2E documentation master file, created by
+.. simS2E documentation master file, created by
    sphinx-quickstart on Fri Jan  9 12:44:40 2015.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to myS2E's documentation!!!
+Welcome to simS2E's documentation!!!
 ===================================
 
 **[ Documentation is under construction ]**
