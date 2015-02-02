@@ -66,7 +66,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'myS2E'
+project = u'simS2E'
 copyright = u'2015, Chunhong Yoon'
 
 # The version info for the project you're documenting, acts as replacement for
