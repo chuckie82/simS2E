@@ -9,6 +9,8 @@ Orientation Determination
 Input/Output data description
 -----------------------------
 
+Test
+
 The input/output data is expected in hdf5 format, and the glossary can be found below. Orientation determination module is responsible for reading in and writing out in the format specified below.
 
 orient_out_<7 digit ID>.h5 (Output HDF glossary)
@@ -38,4 +40,9 @@ orient_out_<7 digit ID>.h5 (Output HDF glossary)
 | **version**              | hdf5 format version                                                 | Float     | 0.1      |
 +--------------------------+---------------------------------------------------------------------+-----------+----------+
 
+Diagnostics of reconstructed 3D diffraction volume
+-----------------------------
+EMC reconstruction parameters..
 
+.. image:: _static/orient_2015_01_28_21_00_34.png
+    :scale: 70 %
