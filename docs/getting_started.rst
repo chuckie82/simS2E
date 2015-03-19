@@ -10,7 +10,7 @@ Getting started
 .. image:: _static/pmi_rsz.png
     :scale: 100 %
 
-Setting up Sphinx for documenting start-to-end simulation
+Setting up Sphinx for documenting source-to-experiment simulation
 =========================================================
 
 You need clone the start-to-end repository from GitHub::
