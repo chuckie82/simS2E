@@ -13,7 +13,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   getting_started.rst
+   docs/getting_started.rst
    fel_source_simulation.rst
    propagation.rst
    photon_matter_interaction.rst
