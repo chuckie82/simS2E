@@ -1,0 +1,37 @@
+NUM_FELsource_OUT=2
+NUM_PROP_OUT=2
+NUM_PMI_OUT=1000
+NUM_DIFFR_OUT=200000
+
+
+
+###### PACKAGES ######
+FELsource=ppFAST
+PROP=WPG
+PMI=XMDYN
+DIFFR=SingFEL
+ORIENT=EMC
+
+###### FAST ######
+    PREFIX=2014-05_XFEL_5keV_12GeV_;
+
+    # Short pulse for 3fs: 
+		CHARGE=20pC ;
+    # Short pulse for 9fs:
+		#CHARGE=100pC ;
+    # Short pulse for 30fs: 
+		#CHARGE=250pC ;
+    #
+    # Indexing number for the actual undulator length for the gain curve (misc/gain_curve (columns 1:2) and detail/info/data_description)
+    #NZC=20;
+    NZC=35;
+    #NZC=50;
+    #
+
+###### WPG ######
+
+###### XMDYN ######
+
+###### SingFEL ######
+
+###### EMC ######
