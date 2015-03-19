@@ -14,12 +14,12 @@ Contents:
    :maxdepth: 2
 
    docs/getting_started.rst
-   fel_source_simulation.rst
-   propagation.rst
-   photon_matter_interaction.rst
-   coherent_diffraction.rst
-   orientation_determination.rst
-   phasing.rst
+   docs/fel_source_simulation.rst
+   docs/propagation.rst
+   docs/photon_matter_interaction.rst
+   docs/coherent_diffraction.rst
+   docs/orientation_determination.rst
+   docs/phasing.rst
 
 .. image:: _static/protein.png
     :scale: 30 %
