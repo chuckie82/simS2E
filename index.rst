@@ -7,6 +7,7 @@ Welcome to simS2E's documentation!!!
 ===================================
 
 **[ Documentation is under construction ]**
+-------------------------------------------
 
 Contents:
 
