@@ -2,7 +2,7 @@
 umask 002
 
 ROOT=/data/S2E
-export LD_LIBRARY_PATH=/afs/desy.de/group/exfel/software/karabo-trunk/extern/lib:$LD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=/afs/desy.de/group/exfel/software/karabo-trunk/extern/lib:$LD_LIBRARY_PATH
 
 # HELP
 if [ -z "$1" ] ; then
@@ -27,7 +27,7 @@ else
     ID=$(printf %07d $ID)
 fi
 
-PYTHON=/afs/desy.de/group/exfel/software/karabo-trunk/extern/bin/python 
+PYTHON=/usr/bin/python2.7 #/afs/desy.de/group/exfel/software/karabo-trunk/extern/bin/python 
 
 ########### Load input configuration ##########
 . $ROOT/config/config_$PROJECT
@@ -53,7 +53,6 @@ fi
 ########### diffr ##########
 
 if [ "x$MODULE" == xdiffr ] ||  [ "x$MODULE" == xs2e ]  ; then
-echo "Hurray!"
     . master_${DIFFR}.sh
 fi
 

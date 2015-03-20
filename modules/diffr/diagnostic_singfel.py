@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.6
+#!/usr/bin/env python2.7
 """
 prepHDF5.py:
 Prepares hdf5 in S2E format
@@ -7,6 +7,7 @@ import os
 import sys
 import h5py
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 
 def diagnose( projectDir ) :

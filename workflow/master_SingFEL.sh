@@ -2,16 +2,22 @@
 
 echo "Starting SingFEL..."
 
-SingFEL_DIR="/slicetest/yoon/singfel"
-IO_DIR=$SingFEL_DIR/dataS2E/$PROJECT
-CONFIG=$ROOT/workflow/config_$PROJECT
+# Directory where SingFEL is installed
+SingFEL_DIR=$ROOT/packages/diffr/singfel
+# Directory where simulation data will be stored
+IO_DIR=$ROOT/data/$PROJECT
+# Full path to the config file for this simulation
+CONFIG=$ROOT/config/config_$PROJECT
 
 echo "SingFEL_DIR: " $SingFEL_DIR
 echo "IO_DIR: " $IO_DIR
 echo "CONFIG: " $CONFIG
 
+# Copy python script for preparing hdf5 structure
+ln -s $ROOT/modules/diffr/prepHDF5.py /data/S2E/data/$PROJECT/prepHDF5.py
+
 cd $SingFEL_DIR/build
-make &&
+make #&& 
 mpirun -np $numProcesses -f $hostFile $SingFEL_DIR/bin/radiationDamageMPI \
 --input_dir = $IO_DIR \
 --output_dir = $IO_DIR/diffr \
@@ -30,4 +36,4 @@ mpirun -np $numProcesses -f $hostFile $SingFEL_DIR/bin/radiationDamageMPI \
 cp $SingFEL_DIR/src/radiationDamageMPI.cpp $ROOT/data/$PROJECT/diffr/.
 
 # Perform diagnostic
-python $ROOT/modules/diffr/diagnostic_singfel.py $IO_DIR
+python2.7 $ROOT/modules/diffr/diagnostic_singfel.py $IO_DIR
