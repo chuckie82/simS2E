@@ -14,11 +14,11 @@ echo "IO_DIR: " $IO_DIR
 echo "CONFIG: " $CONFIG
 
 # Copy python script for preparing hdf5 structure
-ln -s $ROOT/modules/diffr/prepHDF5.py /data/S2E/data/$PROJECT/prepHDF5.py
+cp $ROOT/modules/diffr/prepHDF5.py /data/S2E/data/$PROJECT/prepHDF5.py
 
 cd $SingFEL_DIR/build
 make #&& 
-mpirun -np $numProcesses -f $hostFile $SingFEL_DIR/bin/radiationDamageMPI \
+mpirun -np $numProcesses $SingFEL_DIR/bin/radiationDamageMPI \
 --input_dir = $IO_DIR \
 --output_dir = $IO_DIR/diffr \
 --config_file = $CONFIG \
