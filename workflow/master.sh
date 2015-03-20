@@ -1,8 +1,7 @@
 # Set permisisons
 umask 002
 
-ROOT=/data/S2E
-#export LD_LIBRARY_PATH=/afs/desy.de/group/exfel/software/karabo-trunk/extern/lib:$LD_LIBRARY_PATH
+ROOT=/simS2E
 
 # HELP
 if [ -z "$1" ] ; then
@@ -27,7 +26,7 @@ else
     ID=$(printf %07d $ID)
 fi
 
-PYTHON=/usr/bin/python2.7 #/afs/desy.de/group/exfel/software/karabo-trunk/extern/bin/python 
+PYTHON=/usr/bin/python2.7
 
 ########### Load input configuration ##########
 . $ROOT/config/config_$PROJECT
@@ -61,4 +60,3 @@ fi
 if [ "x$MODULE" == xorient ] ||  [ "x$MODULE" == xs2e ]  ; then
     . master_${ORIENT}.sh
 fi
-
