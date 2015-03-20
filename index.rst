@@ -15,6 +15,7 @@ Contents:
    :maxdepth: 2
 
    docs/getting_started.rst
+   docs/quick_demo.rst
    docs/fel_source_simulation.rst
    docs/propagation.rst
    docs/photon_matter_interaction.rst

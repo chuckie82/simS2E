@@ -11,7 +11,7 @@ Getting started
     :scale: 100 %
 
 Setting up Sphinx for documenting source-to-experiment simulation
-=========================================================
+=================================================================
 
 You need clone the start-to-end repository from GitHub::
 
@@ -48,5 +48,6 @@ Installing your start-to-end package
 ====================================
 
 More instructions to come...
+
 
 
