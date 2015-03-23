@@ -5,7 +5,11 @@
 Quick demo
 ***************
 
-*TODO* Add instructions for installing docker
+Install Docker
+==============
+You need to have Docker installed. Docker is a new container technology (Think of it as a light-weight virtualbox). Instructions for installation can be found here::
+
+  https://docs.docker.com/installation/
 
 Setting up the environment for simS2E
 =====================================
