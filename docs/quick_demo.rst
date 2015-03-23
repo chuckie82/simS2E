@@ -14,7 +14,7 @@ You need to clone the simS2E repository from GitHub into your local directory (I
 
   git clone https://github.com/chuckie82/simS2E.git
 
-*TODO Temporary* copy pmi_out_0000001.h5 to /host/path/simS2E/data/sim_example/pmi
+*TODO* copy pmi_out_0000001.h5 to /host/path/simS2E/data/sim_example/pmi
 
 Go to the location of the Dockerfile::
   
