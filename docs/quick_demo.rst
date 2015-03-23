@@ -22,17 +22,19 @@ You need to clone the simS2E repository from GitHub into your local directory (I
 
 Go to the location of the Dockerfile::
   
-  cd simS2E/packages/singfel
+  cd /host/path/simS2E/packages/singfel
 
 Build the SingFEL Dockerfile::
 
   docker build -t chuckie82/sims2e_singfel:v1 .
 
+Now you are ready to run the simulation!!!
+
 Run the SingFEL docker image::
 
   docker run -it -v /host/path/simS2E:/simS2E chuckie82/sims2e_singfel:v1 /bin/bash
 
-Now you are ready to run the simulation!!!
+You are now inside the Docker container running Ubuntu v14.04. The simulation is located under /data/S2E.
 
 Go to the workflow directory and run the simple example::
 
@@ -47,7 +49,7 @@ You can examine the h5 file by running::
   cd /host/path/s2eDocs/modules/diffr
   python diagnostic_singfel.py /host/path/simS2E/data/sim_example
 
-You should observer two matplotlib plots: 1) photon filed and 2) photon count.
+You should observer two matplotlib plots: 1) photon filed and 2) photon count. You may need to install h5py, matplotlib and numpy to run this script.
 
 
 
