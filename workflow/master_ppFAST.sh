@@ -38,7 +38,7 @@ for (( i=1; i<=$JMAX; i++ )); do
 	fi
 	echo $myInd
 	echo $myRunNum
-    /afs/desy.de/group/exfel/software/karabo-trunk/extern/bin/python $ROOT/modules/FELsource/fast2h5_new_SP.py --suffix=$myInd --prefix=$PREFIX --time-start=$TRD1 --time-end=$TRD2  --skip-nslices=$NSKIP --e-charge=$CHARGE --run-number $myRunNum --zc-point-num=$NZC --output-dir=$ROOT/data/$PROJECT/FELsource 
+    python $ROOT/modules/FELsource/fast2h5_new_s2e_fake.py --output-dir=$ROOT/data/$PROJECT/FELsource 
 done
-/afs/desy.de/group/exfel/software/karabo-trunk/extern/bin/python $ROOT/modules/FELsource/diagnostic_felsrc.py --input-file $ROOT/data/$PROJECT/FELsource/FELsource_out_$myInd
+#/afs/desy.de/group/exfel/software/karabo-trunk/extern/bin/python $ROOT/modules/FELsource/diagnostic_felsrc.py --input-file $ROOT/data/$PROJECT/FELsource/FELsource_out_$myInd
 
