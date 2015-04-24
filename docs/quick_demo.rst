@@ -44,7 +44,7 @@ Go to the workflow directory and run the simple example::
 When the simulation is complete. Exit the docker container by typing "exit".
 The diffraction file will be in /host/path/simS2E/data/sim_example/diffr
 
-You can examine the h5 file by running::
+You can examine the hdf5 file by running::
 
   cd /host/path/s2eDocs/modules/diffr
   python diagnostic_singfel.py /host/path/simS2E/data/sim_example
