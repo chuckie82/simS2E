@@ -74,6 +74,7 @@ RUN cd ${LIB_DIR} && \
     echo "using mpi ;" >> project-config.jam && \
     ./b2 install
 ENV BOOST_DIR ${LIB_DIR}/boost_${BOOST_MAJOR}_${BOOST_MINOR}_${BOOST_BUILD}
+ENV LD_LIBRARY_PATH ${BOOST_DIR}/lib:$LD_LIBRARY_PATH
 
 ###################
 # Install HDF5

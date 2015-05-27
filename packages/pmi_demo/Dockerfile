@@ -19,6 +19,8 @@ RUN apt-get update && apt-get install -y \
     wget \
     python-h5py \
     python-matplotlib \
+    python-scipy \
+    openbabel \
     nano
 
 ###################

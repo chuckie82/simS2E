@@ -4,13 +4,13 @@
 ; [Geom]
 
 ; detector distance (m)
-geom/d = 0.13
+geom/d = 0.2
 
 ; pixel width (m)
-geom/pix_width = 1200e-6
+geom/pix_width = 600e-6
 
 ; number of pixels along x
-geom/px = 81
+geom/px = 128
 # distance 0.13m, 220e-6 pix_width and 380 pixels gives 4 Angstrom resolution
 
 ; bad pixel map (ascii)

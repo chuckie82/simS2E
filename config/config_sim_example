@@ -29,16 +29,18 @@ NZC=35;
 
 ###### XMDYN ######
 
+###### pmi_demo ######
+
 ###### SingFEL ######
 
 numProcesses=2
 hostFile=/data/S2E/lib/diffr/mpich-install/hostfile
-uniformRotation=0
-calculateCompton=1
-sliceInterval=101
-numSlices=101
+uniformRotation=1
+calculateCompton=0
+sliceInterval=100
+numSlices=100
 pmiStartID=1
 pmiEndID=1
-numDP=1
+numDP=5000
 
 ###### EMC ######
