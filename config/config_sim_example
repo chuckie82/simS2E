@@ -1,7 +1,7 @@
 NUM_FELsource_OUT=1
 NUM_PROP_OUT=1
 NUM_PMI_OUT=10
-NUM_DIFFR_OUT=200000
+NUM_DIFFR_OUT=100
 
 ###### PACKAGES ######
 FELsource=ppFAST
@@ -33,7 +33,7 @@ NZC=35;
 
 ###### SingFEL ######
 
-numProcesses=2
+numProcesses=4
 hostFile=/data/S2E/lib/diffr/mpich-install/hostfile
 uniformRotation=1
 calculateCompton=0
@@ -41,6 +41,6 @@ sliceInterval=100
 numSlices=100
 pmiStartID=1
 pmiEndID=1
-numDP=5000
+numDP=$NUM_DIFFR_OUT
 
 ###### EMC ######

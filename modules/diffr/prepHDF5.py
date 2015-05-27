@@ -44,8 +44,8 @@ def prepS2E( src , dest , config ) :
                 file_out.copy( x , "history/parent/detail/" + objname )
             else:
                 print objname  , " has been SKIPPED!!"
-        else :
-            print '  NOT:', objname
+        #else :
+        #    print '  NOT:', objname
 
     #print file_in['data'].keys()
     #print file_in['data'].items()    
