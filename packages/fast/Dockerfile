@@ -34,7 +34,7 @@ RUN mkdir -p $ROOT_DIR/packages && cd $ROOT_DIR/packages && \
 RUN mkdir -p $ROOT_DIR/modules && cd $ROOT_DIR/modules && wget https://github.com/samoylv/FELsource/archive/master.zip -O FELsource-master.zip && \
     unzip FELsource-master.zip && mv FELsource-master FELsource && cd FELsource && gfortran -ffixed-line-length-132 pproc-fast2xy-2013-v2-06-wo-fname.for -o pproc-fast2xy-2013-v2-06-wo-fname.exe && \
     mkdir -p $ROOT_DIR/data/FELsource && \
-    wget http://dcache-door-photon03.desy.de:2980/simS2E/FELsource/3fs_20/FELsource_out_0000001.h5 -O FELsource_out_0000001.h5
+    wget http://dcache-door-photon03.desy.de:2980/simS2E/FELsource/9fs_35T/FELsource_out_0000001.h5 -O FELsource_out_0000001.h5
 
 ###################
 # Setup directories
