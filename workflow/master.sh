@@ -1,7 +1,7 @@
 # Set permisisons
 umask 002
 
-ROOT=/data/S2E
+ROOT=/simS2E
 
 # HELP
 if [ -z "$1" ] ; then
