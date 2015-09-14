@@ -4,6 +4,7 @@ NUM_PMI_OUT=10
 NUM_DIFFR_OUT=100
 
 ###### PACKAGES ######
+# Specify which modules to use in simulation pipeline
 FELsource=ppFAST
 PROP=WPG
 PMI=pmi_demo
@@ -32,9 +33,15 @@ NZC=35;
 ###### pmi_demo ######
 
 ###### SingFEL ######
+# Directory where SingFEL is installed
+SingFEL_DIR=$ROOT/packages/diffr/singfel
+# Directory where simulation data will be stored
+IO_DIR=$ROOT/data/$PROJECT
+# Full path to the config file for this simulation
+CONFIG=$ROOT/config/config_$PROJECT
 
 numProcesses=4
-hostFile=/data/S2E/lib/diffr/mpich-install/hostfile
+hostFile=$ROOT/lib/diffr/mpich-install/hostfile
 uniformRotation=1
 calculateCompton=0
 sliceInterval=100
@@ -44,3 +51,16 @@ pmiEndID=1
 numDP=$NUM_DIFFR_OUT
 
 ###### EMC ######
+SRC=$ROOT/packages/s2e_recon/EMC_Src
+INPUT=$ROOT/data/sim_example/diffr
+TMP=$ROOT/tmp
+OUTPUT=$ROOT/data/sim_example
+INITIALQUAT=5
+MAXQUAT=9
+MAXITER=200
+MINERR="4.E-8"
+PLOT=1
+DETAILED=1
+SLEEPDUR=60
+NUMRECON=1
+

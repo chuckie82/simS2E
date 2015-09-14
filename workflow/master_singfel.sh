@@ -2,13 +2,6 @@
 
 echo "Starting SingFEL..."
 
-# Directory where SingFEL is installed
-SingFEL_DIR=$ROOT/packages/diffr/singfel
-# Directory where simulation data will be stored
-IO_DIR=$ROOT/data/$PROJECT
-# Full path to the config file for this simulation
-CONFIG=$ROOT/config/config_$PROJECT
-
 echo "SingFEL_DIR: " $SingFEL_DIR
 echo "IO_DIR: " $IO_DIR
 echo "CONFIG: " $CONFIG
