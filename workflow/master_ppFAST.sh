@@ -1,4 +1,4 @@
-cd $ROOT ;  pwd
+cd $WORKDIR ;  pwd
 
 #
 # number of skipped time slices
@@ -26,7 +26,7 @@ echo "Welcome to FELsource"
 echo "CHARGE:"$CHARGE 
 echo $(printf "%s : %s fs, NSKIP=%d" $TRD1 $TRD2 $NSKIP)
 		
-cd $ROOT/modules/FELsource ; pwd
+cd $WORKDIR/modules/FELsource ; pwd
 
 JMAX=$NUM_FELsource_OUT;
  
@@ -38,7 +38,7 @@ for (( i=1; i<=$JMAX; i++ )); do
 	fi
 	echo $myInd
 	echo $myRunNum
-    python $ROOT/modules/FELsource/fast2h5_new_s2e_fake.py --output-dir=$ROOT/data/$PROJECT/FELsource 
+    python $WORKDIR/modules/FELsource/fast2h5_new_s2e_fake.py --output-dir=$ROOT/data/$PROJECT/FELsource 
 done
 #/afs/desy.de/group/exfel/software/karabo-trunk/extern/bin/python $ROOT/modules/FELsource/diagnostic_felsrc.py --input-file $ROOT/data/$PROJECT/FELsource/FELsource_out_$myInd
 
