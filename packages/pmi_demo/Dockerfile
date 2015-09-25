@@ -5,7 +5,7 @@ MAINTAINER Chunhong Yoon <chuckie82@gmail.com>
 ###################
 # Setup environment
 ###################
-ENV ROOT_DIR /data/S2E
+ENV ROOT_DIR /simS2E
 RUN mkdir -p $ROOT_DIR
 
 ###################
@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
     python-matplotlib \
     python-scipy \
     openbabel \
+    bc \
     nano
 
 ###################
@@ -41,10 +42,10 @@ ENV HDF5_DIR ${LIB_DIR}/hdf5-${HDF5_MAJOR}.${HDF5_MINOR}.${HDF5_BUILD}
 ###################
 # Setup directories
 ###################
-RUN cd $ROOT_DIR && \
-    ln -s /simS2E/workflow workflow && \
-    ln -s /simS2E/config config && \
-    ln -s /simS2E/data data && \
-    ln -s /simS2E/modules modules && \
-    ln -s /simS2E/packages packages && \
-    ln -s /simS2E/tmp tmp
+#RUN cd $ROOT_DIR && \
+#    ln -s /simS2E/workflow workflow && \
+#    ln -s /simS2E/config config && \
+#    ln -s /simS2E/data data && \
+#    ln -s /simS2E/modules modules && \
+#    ln -s /simS2E/packages packages && \
+#    ln -s /simS2E/tmp tmp
