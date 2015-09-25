@@ -5,7 +5,7 @@ MAINTAINER Alexey Buzmakov <buzmakov@gmail.com>
 ###################
 # Setup environment
 ###################
-ENV ROOT_DIR /data/S2E
+ENV ROOT_DIR /simS2E
 RUN mkdir -p $ROOT_DIR
 
 
@@ -30,18 +30,18 @@ RUN mkdir -p $ROOT_DIR/packages && cd $ROOT_DIR/packages && \
 ###################
 # Install FEL
 ###################
-
 RUN mkdir -p $ROOT_DIR/modules && cd $ROOT_DIR/modules && wget https://github.com/samoylv/FELsource/archive/master.zip -O FELsource-master.zip && \
-    unzip FELsource-master.zip && mv FELsource-master FELsource && cd FELsource && gfortran -ffixed-line-length-132 pproc-fast2xy-2013-v2-06-wo-fname.for -o pproc-fast2xy-2013-v2-06-wo-fname.exe && \
+    unzip FELsource-master.zip && mv FELsource-master FELsource && \
+    cd FELsource && gfortran -ffixed-line-length-132 pproc-fast2xy-2013-v2-06-wo-fname.for -o pproc-fast2xy-2013-v2-06-wo-fname.exe && \
     mkdir -p $ROOT_DIR/data/FELsource && \
-    wget http://dcache-door-photon03.desy.de:2980/simS2E/FELsource/9fs_35T/FELsource_out_0000001.h5 -O FELsource_out_0000001.h5
+    wget http://dcache-door-photon03.desy.de:2980/simS2E/FELsource/3fs_20/FELsource_out_0000001.h5 -O FELsource_out_0000001.h5
 
 ###################
 # Setup directories
 ###################
-RUN cd $ROOT_DIR && \
-    ln -s /simS2E/workflow workflow && \
-    ln -s /simS2E/config config && \
-    ln -s /simS2E/data data && \
-    ln -s /simS2E/modules modules && \
-    ln -s /simS2E/tmp tmp
+#RUN cd $ROOT_DIR && \
+#    ln -s $ROOT_DIR/workflow workflow && \
+#    ln -s $ROOT_DIR/config config && \
+#    ln -s $ROOT_DIR/data data && \
+##    ln -s /simS2E/modules modules && \
+#    ln -s $ROOT_DIR/tmp tmp
