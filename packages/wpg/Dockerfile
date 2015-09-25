@@ -3,7 +3,7 @@ MAINTAINER Alexey Buzmakov <buzmakov@gmail.com>
 ###################
 # Setup environment
 ###################
-ENV ROOT_DIR /data/S2E
+ENV ROOT_DIR /simS2E
 RUN mkdir -p $ROOT_DIR
 ###################
 # Install packages
@@ -33,9 +33,9 @@ unzip prop-develop.zip && mv prop-develop prop && rm prop-develop.zip
 ###################
 # Setup directories
 ###################
-RUN cd $ROOT_DIR && \
-ln -s /simS2E/workflow workflow && \
-ln -s /simS2E/config config && \
-ln -s /simS2E/data data && \
-ln -s /simS2E/modules modules && \
-ln -s /simS2E/tmp tmp
+#RUN cd $ROOT_DIR && \
+#ln -s /simS2E/workflow workflow && \
+#ln -s /simS2E/config config && \
+#ln -s /simS2E/data data && \
+#ln -s /simS2E/modules modules && \
+#ln -s /simS2E/tmp tmp
