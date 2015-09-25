@@ -51,14 +51,16 @@ pmiEndID=1
 numDP=$NUM_DIFFR_OUT
 
 ###### EMC ######
-SRC=$ROOT/packages/s2e_recon/EMC_Src
+SRC=$WORKDIR/packages/s2e_recon/EMC_Src
 INPUT=$ROOT/data/sim_example/diffr
 TMP=$ROOT/tmp
-OUTPUT=$ROOT/data/sim_example
+OUTPUT=$ROOT/data/sim_example/orient
+
 INITIALQUAT=5
 MAXQUAT=9
 MAXITER=200
 MINERR="4.E-8"
+BEAMSTOP=0
 PLOT=1
 DETAILED=1
 SLEEPDUR=60
