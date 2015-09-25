@@ -34,14 +34,14 @@ NZC=35;
 
 ###### SingFEL ######
 # Directory where SingFEL is installed
-SingFEL_DIR=$ROOT/packages/diffr/singfel
+SingFEL_DIR=$WORKDIR/packages/diffr/singfel
 # Directory where simulation data will be stored
 IO_DIR=$ROOT/data/$PROJECT
 # Full path to the config file for this simulation
 CONFIG=$ROOT/config/config_$PROJECT
 
 numProcesses=4
-hostFile=$ROOT/lib/diffr/mpich-install/hostfile
+hostFile=$WORKDIR/lib/diffr/mpich-install/hostfile
 uniformRotation=1
 calculateCompton=0
 sliceInterval=100
