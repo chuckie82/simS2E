@@ -10,7 +10,7 @@ fi
 if [ "x$MODULE" == xpmi ] ||  [ "x$MODULE" == xs2e ]  ; then
     # pmi (Z.J.)
     
-    PMI_EXE=$ROOT/packages/XMDYN/exe/xmdyn_s2e.x
+    #PMI_EXE=$ROOT/packages/XMDYN/exe/xmdyn_s2e.x
     PMI_EXE="$PYTHON $ROOT/packages/pmi_demo/pmi_demo.py"
     #NUM_PROP=100
     #NUM_PROP=`ls $PROJECT/prop/prop_out_???????.h5|nl|tail -n1|awk -F\  '{print $1}'`
