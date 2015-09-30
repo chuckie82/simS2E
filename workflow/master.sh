@@ -1,8 +1,8 @@
 # Set permisisons
 umask 002
 
-ROOT=/home
-WORKDIR=/simS2E
+ROOT=/simS2E
+WORKDIR=/home
 
 # HELP
 if [ -z "$1" ] ; then

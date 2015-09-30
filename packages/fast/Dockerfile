@@ -5,9 +5,8 @@ MAINTAINER Alexey Buzmakov <buzmakov@gmail.com>
 ###################
 # Setup environment
 ###################
-ENV ROOT_DIR /simS2E
+ENV ROOT_DIR /home
 RUN mkdir -p $ROOT_DIR
-
 
 ###################
 # Install packages
@@ -19,6 +18,7 @@ RUN apt-get update && apt-get install -y \
     python${PYTHON_MAJOR}.${PYTHON_MINOR}-dev \
     unzip python-numpy python-scipy python-h5py \ 
     wget nano && apt-get clean && apt-get autoclean
+
 ###################
 # Install WPG
 ###################
