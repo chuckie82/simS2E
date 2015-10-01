@@ -51,7 +51,7 @@ pmiEndID=1
 numDP=$NUM_DIFFR_OUT
 
 ###### EMC ######
-SRC=$WORKDIR/packages/s2e_recon/EMC_Src
+SRC=$WORKDIR/packages/orient/s2e_recon/EMC_Src
 INPUT=$ROOT/data/sim_example/diffr
 TMP=$ROOT/tmp
 OUTPUT=$ROOT/data/sim_example/orient

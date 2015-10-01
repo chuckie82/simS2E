@@ -3,7 +3,7 @@ MAINTAINER Alexey Buzmakov <buzmakov@gmail.com>
 ###################
 # Setup environment
 ###################
-ENV ROOT_DIR /simS2E
+ENV ROOT_DIR /home
 RUN mkdir -p $ROOT_DIR
 ###################
 # Install packages

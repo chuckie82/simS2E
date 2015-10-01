@@ -5,7 +5,7 @@ MAINTAINER Chunhong Yoon <chuckie82@gmail.com>
 ###################
 # Setup environment
 ###################
-ENV ROOT_DIR /simS2E
+ENV ROOT_DIR /home
 RUN mkdir -p $ROOT_DIR
 
 ###################
