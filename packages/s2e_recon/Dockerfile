@@ -5,7 +5,7 @@ MAINTAINER Chunhong Yoon <chuckie82@gmail.com>
 ###################
 # Setup environment
 ###################
-ENV ROOT_DIR /data/S2E
+ENV ROOT_DIR /home
 RUN mkdir -p $ROOT_DIR
 ENV LIB_DIR ${ROOT_DIR}/lib/orient
 RUN mkdir -p $LIB_DIR
@@ -56,9 +56,9 @@ RUN cd $PKG_DIR && \
 ###################
 # Setup directories
 ###################
-RUN cd $ROOT_DIR && \
-    ln -s /simS2E/workflow workflow && \
-    ln -s /simS2E/config config && \
-    ln -s /simS2E/data data && \
-    ln -s /simS2E/modules modules && \
-    ln -s /simS2E/tmp tmp
+#RUN cd $ROOT_DIR && \
+#    ln -s /simS2E/workflow workflow && \
+#    ln -s /simS2E/config config && \
+#    ln -s /simS2E/data data && \
+#    ln -s /simS2E/modules modules && \
+#    ln -s /simS2E/tmp tmp
