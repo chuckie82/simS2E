@@ -10,7 +10,7 @@ Getting started
 .. image:: _static/pmi_rsz.png
     :scale: 100 %
 
-simS2E is an implementation-agnostic framework that only defines the data interfaces between two module, i.e.:: Module A must output an hdf5 file that adheres to the simS2E interface which Module B is expecting to read in. Actual implementation of Modules A and B is up to the user. If you understand this concept, then you are ready to use simS2E. You will need to set up the environment for simS2E and if you have a module that you want to plug in, find out what data formats the input and output should be here::
+simS2E is an implementation-agnostic framework that defines the data interfaces between the modules, i.e. Module A must output an hdf5 file that adheres to the simS2E interface which Module B is expecting to read in. Actual implementation of Modules A and B is up to the user. If you understand this concept, then you are ready to use simS2E. You will need to set up the environment for simS2E and if you have a module that you want to plug in, find out what data formats the input and output should be here::
 
   http://sims2e.readthedocs.org/en/latest/docs/fel_source_simulation.html
 
@@ -18,7 +18,7 @@ If you would like to try running an example simS2E pipeline, then you need Docke
 
 Installing Docker for example simS2E pipeline
 =============================================
-You do NOT need Docker for running simS2E. You only need it for running the example simS2E pipeline that we provide. Docker is a new container technology (Think of it as a light-weight virtualbox) that can be run on your choice of OS. Instructions for installation can be found here::
+You do NOT need Docker for simS2E. You only need it for running the example simS2E pipeline that we provide. Docker is a new container technology (Think of it as a light-weight virtualbox) that can be run on your choice of OS. Instructions for installation can be found here::
 
   https://docs.docker.com/installation/
 
@@ -32,44 +32,43 @@ You need to clone the simS2E repository from GitHub into your local directory (I
 
 You now have a copy of all the files/scripts in the sub-directories needed for simS2E::
 
-  /host/path/simS2E/workflow:: Directory for run scripts
-  /host/path/simS2E/config:: Directory for configuration files
-  /host/path/simS2E/data:: Directory for reading/saving data
-  /host/path/simS2E/packages:: Directory for installing software packages
-  /host/path/simS2E/modules:: Directory for module specific scripts
-  /host/path/simS2E/tmp:: Directory for storing temporary files
-  /host/path/simS2E/docs:: Directory for online documentation
+  /host/path/simS2E/workflow: Directory for run scripts
+  /host/path/simS2E/config: Directory for configuration files
+  /host/path/simS2E/data: Directory for reading/saving data
+  /host/path/simS2E/packages: Directory for installing software packages
+  /host/path/simS2E/modules: Directory for module specific scripts
+  /host/path/simS2E/tmp: Directory for storing temporary files
+  /host/path/simS2E/docs: Directory for online documentation
 
-Go to the location of the Dockerfile::
+Go to the packages directory and run setup.sh. This will build all the packages as Docker containers; 1) FAST for FEL source, 2) WPG for optics, 3) pmi_demo for radiation damage to the sample, 4) SingFEL for diffraction patterns, 5) EMC for orientation recovery, and 6) DM for phase retrieval::
   
-  cd /host/path/simS2E/packages/singfel
-
-Build the SingFEL Dockerfile::
-
-  docker build -t chuckie82/sims2e_singfel:v1 .
+  cd /host/path/simS2E/packages
+  ./setup.sh
 
 Now you are ready to run the simulation!!!
 
-Run the SingFEL docker image::
+1 ) Let's run the FEL source simulation using FAST::
 
-  docker run -it -v /host/path/simS2E:/simS2E chuckie82/sims2e_singfel:v1 /bin/bash
+  docker run -it -v /host/path/simS2E:/simS2E fast:v0.1 /bin/bash
 
-You are now inside the Docker container running Ubuntu v14.04. The simulation is located under /data/S2E.
+You are now inside the Docker container running bash on Ubuntu v14.04. The FAST package is installed under /home/packages and the simS2E directory is located under /simS2E.
 
 Go to the workflow directory and run the simple example::
 
-  cd /data/S2E/workflow
-  ./runSingFEL
+  cd /simS2E/workflow
+  ./runFAST
 
-When the simulation is complete. Exit the docker container by typing "exit".
-The diffraction file will be in /host/path/simS2E/data/sim_example/diffr
+When the simulation is complete. Exit the docker container by typing "exit" or Contrl+D.
+The FELsource output hdf5 file will be in /host/path/simS2E/data/sim_example/FELsource
+
+
 
 You can examine the hdf5 file by running::
 
   cd /host/path/s2eDocs/modules/diffr
   python diagnostic_singfel.py /host/path/simS2E/data/sim_example
 
-You should observer two matplotlib plots: 1) photon filed and 2) photon count. You may need to install h5py, matplotlib and numpy to run this script.
+You should observer two matplotlib plots: 1) photon field and 2) photon count. You may need to install h5py, matplotlib and numpy to run this script.
 
 Setting up Sphinx for documenting simS2E simulation
 =================================================================
