@@ -10,6 +10,7 @@ PROP=WPG
 PMI=pmi_demo
 DIFFR=singfel
 ORIENT=EMC
+PHASE=DM
 
 ###### ppFAST ######
 PREFIX=2014-05_XFEL_5keV_12GeV_;
@@ -66,3 +67,17 @@ DETAILED=1
 SLEEPDUR=60
 NUMRECON=1
 
+###### DM ######
+SRC_DM=$WORKDIR/packages/phase/s2e_recon/DM_Src
+INPUT_DM=$ROOT/data/sim_example/orient
+TMP_DM=$ROOT/tmp
+OUTPUT_DM=$ROOT/data/sim_example/phase
+
+NUMTRIALS_DM=5
+STARTAVE_DM=15
+NUMITER_DM=50
+LEASH_DM=0.2
+SHRINKCYCLES_DM=10
+
+SLEEPDUR_DM=60
+NUMRECON_DM=1

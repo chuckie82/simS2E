@@ -8,7 +8,7 @@ WORKDIR=/home
 if [ -z "$1" ] ; then
     echo \
 "Usage: $0 <PROJECT_DIR>  <MODULE> <ID>
-   <MODULE>: FELsource , prop , pmi , diffr , orient , s2e 
+   <MODULE>: FELsource , prop , pmi , diffr , orient , phase , s2e 
    \`s2e\` stands for all modules of the pipeline
    S2E root dir: $ROOT
 "
@@ -61,3 +61,10 @@ fi
 if [ "x$MODULE" == xorient ] ||  [ "x$MODULE" == xs2e ]  ; then
     . master_${ORIENT}.sh
 fi
+
+########### phase  ##########
+
+if [ "x$MODULE" == xphase ] ||  [ "x$MODULE" == xs2e ]  ; then
+    . master_${PHASE}.sh
+fi
+
