@@ -16,6 +16,10 @@ simS2E is an implementation-agnostic framework that defines the data interfaces 
 
 If you would like to try running an example simS2E pipeline, then you need Docker installed on your machine.
 
+System requirements
+===================
+You will need at least 8GB RAM and 20GB of disk space.
+
 Installing Docker for example simS2E pipeline
 =============================================
 You do NOT need Docker for simS2E. You only need it for running the example simS2E pipeline that we provide. Docker is a new container technology (Think of it as a light-weight virtualbox) that can be run on your choice of OS. Instructions for installation can be found here::
