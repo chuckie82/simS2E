@@ -3,7 +3,7 @@
 	# Beamline description: prop_params.txt
 	#
     echo "Welcome to prop"
-    export $PYTHONPATH=$WORKDIR/packages/WPG:$PYTHONPATH
+    export PYTHONPATH=$WORKDIR/packages/WPG:$PYTHONPATH
     cd $WORKDIR ;  pwd
     #JMAX=NUM_PROP_OUT;
     #myInd=$(printf %07d $JMAX)
