@@ -62,6 +62,14 @@ Go to the workflow directory and run the example. This will generate a single FE
   cd /simS2E/workflow
   ./runFAST
 
+This script runs master.sh which in turn runs master_fast.sh. All the simulation configuration is defined in /simS2E/config/config_sim_example. Let's examine the configuration file::
+
+  nano /simS2E/config/config_sim_example
+
+NUM_FELsource_OUT=1 means output 1 instance of the FEL pulse.
+FELsource=ppFAST means use the FAST package.
+FAST simulation parameters are defined under ###### ppFAST ######.
+
 When the simulation is complete. Exit the docker container by typing "exit" or Contrl+D.
 FELsource output hdf5 file will be in /host/path/simS2E/data/sim_example/FELsource. You can examine the hdf5 file by running::
 
@@ -87,14 +95,15 @@ WPG output hdf5 file will be in /host/path/simS2E/data/sim_example/prop.
 
   docker run -it -v /host/path/simS2E:/simS2E pmi_demo:v0.1 /bin/bash
 
-You are now inside the Docker container running bash on Ubuntu v14.04. The PMI_DEMO package is installed under /home/packages and the simS2E directory is located under /simS2E. Due to the license agreement, the PMI package is not available in this example simulation.
+You are now inside the Docker container running bash on Ubuntu v14.04. The PMI_DEMO package is installed under /home/packages and the simS2E directory is located under /simS2E. Due to the license agreement, the PMI package is not available in this example simulation and demo version is used instead.
 
 Go to the workflow directory and run the example. This will generate the scattering factors of the sample under going radiation damage over time::
 
   cd /simS2E/workflow
   ./runPMI
 
-When the simulation is complete. Exit the docker container by typing "exit" or Contrl+D.
+The pdb file that specifies the initial atom positions and scattering factors is stored under /simS2E/data/sim_example/sample/sample.h5.
+When the simulation is complete, exit the docker container by typing "exit" or Contrl+D.
 PMI_DEMO output hdf5 file will be in /host/path/simS2E/data/sim_example/pmi.
 
 4 ) Let's run the diffraction simulation using SingFEL::
@@ -108,15 +117,14 @@ Go to the workflow directory and run the example. This will generate the diffrac
   cd /simS2E/workflow
   ./runSingFEL
 
-When the simulation is complete. Exit the docker container by typing "exit" or Contrl+D.
-SingFEL output hdf5 file will be in /host/path/simS2E/data/sim_example/pmi.
+Let's open the simulation configuration file again in /simS2E/config/config_sim_example. NUM_DIFFR_OUT=100 means generate 100 time evolution diffraction patterns. In order to run a meaningful simulation, try increasing this number to 50,000. DIFFR=singfel means use the SingFEL package. SingFEL parameters are defined under ###### SingFEL ######. When the simulation is complete, exit the docker container by typing "exit" or Contrl+D. SingFEL output hdf5 file will be in /host/path/simS2E/data/sim_example/pmi.
 
 You can examine the hdf5 file by running::
 
   cd /host/path/s2eDocs/modules/diffr
   python diagnostic_singfel.py /host/path/simS2E/data/sim_example
 
-You should observer two matplotlib plots: 1) photon field and 2) photon count. You may need to install h5py, matplotlib and numpy to run this script.
+You should observe two matplotlib plots: 1) photon field and 2) photon count. You may need to install h5py, matplotlib and numpy to run this script.
 
 5 ) Let's run the orientation recovery simulation using EMC::
 
@@ -124,18 +132,18 @@ You should observer two matplotlib plots: 1) photon field and 2) photon count. Y
 
 You are now inside the Docker container running bash on Ubuntu v14.04. The EMC package is installed under /home/packages and the simS2E directory is located under /simS2E.
 
-Go to the workflow directory and run the example. This will generate the 3D diffraction volume after orientation recovery. Note that EMC may take many hours to converge to a solution. On my Linux box, it took about a day::
+Go to the workflow directory and run the example. This will generate the 3D diffraction volume after orientation recovery. Note that EMC may take many hours to converge to a solution. On my Linux box, it takes about a day::
 
   cd /simS2E/workflow
   ./runEMC
 
-When the simulation is complete. Exit the docker container by typing "exit" or Contrl+D.
-EMC output hdf5 file will be in /host/path/simS2E/data/sim_example/orient.
+Let's open the simulation configuration file again in /simS2E/config/config_sim_example. ORIENT=EMC specifies the EMC algorithm for orientation recovery. The EMC parameters are defined under ###### EMC ######. When the simulation is complete, exit the docker container by typing "exit" or Contrl+D. EMC output hdf5 file will be in /host/path/simS2E/data/sim_example/orient.
 
 6 ) Let's run the phase retrieval simulation using DM::
 
   docker run -it -v /host/path/simS2E:/simS2E dm:v0.1 /bin/bash
 
+###### DM ######
 You are now inside the Docker container running bash on Ubuntu v14.04. The DM package is installed under /home/packages and the simS2E directory is located under /simS2E.
 
 Go to the workflow directory and run the example. This will generate the 3D electron density.::
@@ -143,8 +151,7 @@ Go to the workflow directory and run the example. This will generate the 3D elec
   cd /simS2E/workflow
   ./runDM
 
-When the simulation is complete. Exit the docker container by typing "exit" or Contrl+D.
-DM output hdf5 file will be in /host/path/simS2E/data/sim_example/phase.
+Let's open the simulation configuration file again in /simS2E/config/config_sim_example. PHASE=DM specifies the Difference Map algorithm for phase retrieval. The DM parameters are defined under ###### DM ######. When the simulation is complete. Exit the docker container by typing "exit" or Contrl+D. DM output hdf5 file will be in /host/path/simS2E/data/sim_example/phase.
 
 Setting up Sphinx for documenting simS2E simulation
 =================================================================
