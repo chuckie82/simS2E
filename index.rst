@@ -3,10 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to simS2E's documentation!!!
-===================================
+Welcome to simS2E's documentation!
+==================================
 
-**[ Documentation is under construction ]**
 -------------------------------------------
 
 Contents:
@@ -22,7 +21,7 @@ Contents:
    docs/orientation_determination.rst
    docs/phasing.rst
 
-.. image:: _static/protein.png
+.. image:: docs/_static/protein_rsz.png
     :scale: 30 %
 
 Indices and tables
