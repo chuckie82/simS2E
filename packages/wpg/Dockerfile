@@ -24,12 +24,12 @@ RUN mkdir -p $ROOT_DIR/packages && cd $ROOT_DIR/packages && \
 wget http://github.com/samoylv/WPG/archive/develop.zip -O wpg-develop.zip && \
 unzip wpg-develop.zip && mv WPG-develop WPG && rm wpg-develop.zip && \
 cd WPG && make all && rm -rf build
-###################
-# Install prop
-###################
-RUN mkdir -p $ROOT_DIR/modules && cd $ROOT_DIR/modules && \
-wget https://github.com/samoylv/prop/archive/develop.zip -O prop-develop.zip && \
-unzip prop-develop.zip && mv prop-develop prop && rm prop-develop.zip
+# ###################
+# # Install prop
+# ###################
+# RUN mkdir -p $ROOT_DIR/modules && cd $ROOT_DIR/modules && \
+# wget https://github.com/samoylv/prop/archive/develop.zip -O prop-develop.zip && \
+# unzip prop-develop.zip && mv prop-develop prop && rm prop-develop.zip
 ###################
 # Setup directories
 ###################
