@@ -30,19 +30,19 @@ import random
 
 ##############################################################################
 
-global g_s2e
+global g_s2e 
 global g_dbase
 
 
 ##############################################################################
 
 def f_s2e_setup() :
-    global g_s2e
+    global g_s2e 
     g_s2e = dict() ;
     g_s2e['setup'] = dict()
     g_s2e['sys'] = dict()
     g_s2e['setup']['num_digits'] = 7
-    g_s2e['steps'] = 100
+    g_s2e['steps'] = 100 
     g_s2e['maxZ'] = 100
 
 
@@ -56,7 +56,7 @@ def f_save_info() :
 ###    print pmi_file , grp
     xfp  = h5py.File( pmi_file , "a" )
     try:
-        grp_hist_parent = xfp.create_group( grp )
+        grp_hist_parent = xfp.create_group( grp ) 
     except:
         1
 
@@ -87,40 +87,40 @@ def f_dbase_setup() :
     xdbase = load_ff_database()
     g_dbase = dict()
 
-#   q               ->   sin(theta/2)/lambda
-#   au, exp(i*q*r)  ->   1/Angstrom, exp( 2*pi*q*r)
-    g_dbase['halfQ'] = xdbase[:,0] = xdbase[:,0] / ( 2.0 * numpy.pi * 0.529177206 * 2.0 )
+#   q               ->   sin(theta/2)/lambda 
+#   au, exp(i*q*r)  ->   1/Angstrom, exp( 2*pi*q*r) 
+    g_dbase['halfQ'] = xdbase[:,0] = xdbase[:,0] / ( 2.0 * numpy.pi * 0.529177206 * 2.0 ) 
 
-    maxZ = g_s2e['maxZ']  #99
+    maxZ = g_s2e['maxZ']  #99 
     numQ = len( g_dbase['halfQ'] )
     g_dbase['ff'] = numpy.zeros( ( f_dbase_Zq2id( maxZ , maxZ ) + 1 , numQ ) )
-    ii = 0
+    ii = 0 
     for ZZ in range( 1 , maxZ+1 ) :
         for qq in range( ZZ+1 ) :
-            g_dbase['ff'][ ii , : ] = xdbase[:,ZZ] * ( ZZ - qq ) / ( ZZ * 1.0 ) ;
+            g_dbase['ff'][ ii , : ] = xdbase[:,ZZ] * ( ZZ - qq ) / ( ZZ * 1.0 ) ; 
             ii = ii + 1
 
-    g_dbase['Sq_halfQ'] = g_dbase['halfQ'] ;
-    g_dbase['Sq_bound'] = numpy.zeros( (numQ,) ) ;
-    g_dbase['Sq_free']  = numpy.zeros( (numQ,) ) ;
+    g_dbase['Sq_halfQ'] = g_dbase['halfQ'] ; 
+    g_dbase['Sq_bound'] = numpy.zeros( (numQ,) ) ; 
+    g_dbase['Sq_free']  = numpy.zeros( (numQ,) ) ; 
 
     return g_dbase
 #    g_dbase['ph_sigma'] ;
 
 
-##    g_dbase['halfQ'] = numpy.array( [ 0 , 1 , 2 ] ) ;
-##    maxZ = g_s2e['maxZ']  #99
+##    g_dbase['halfQ'] = numpy.array( [ 0 , 1 , 2 ] ) ; 
+##    maxZ = g_s2e['maxZ']  #99 
 ##    g_dbase['ff'] = numpy.zeros( ( f_dbase_Zq2id( maxZ , maxZ ) + 1 , len( g_dbase['halfQ'] ) ) )
-##    ii = 0
+##    ii = 0 
 ##    for ZZ in range( 1 , maxZ+1 ) :
 ##        for qq in range( ZZ+1 ) :
-##            g_dbase['ff'][ ii , : ] = numpy.array( [ 1.0 , 0.5 , 0.25 ] ) * ( ZZ - qq ) ;
+##            g_dbase['ff'][ ii , : ] = numpy.array( [ 1.0 , 0.5 , 0.25 ] ) * ( ZZ - qq ) ; 
 #####            print ZZ,  qq, ii
 #####            print  g_dbase['ff'][ ii , : ]
 ##            ii = ii + 1
-##    g_dbase['Sq_halfQ'] = numpy.array( [ 0 , 0 , 0 ] ) ;
-##    g_dbase['Sq_bound'] = numpy.array( [ 0 , 0 , 0 ] ) ;
-##    g_dbase['Sq_free']  = numpy.array( [ 0 , 0 , 0 ] ) ;
+##    g_dbase['Sq_halfQ'] = numpy.array( [ 0 , 0 , 0 ] ) ; 
+##    g_dbase['Sq_bound'] = numpy.array( [ 0 , 0 , 0 ] ) ; 
+##    g_dbase['Sq_free']  = numpy.array( [ 0 , 0 , 0 ] ) ; 
 ###    g_dbase['ph_sigma'] ;
 
 
@@ -140,15 +140,15 @@ def f_hdf5_simple_read( a_file , a_dataset ) :
 
 def f_load_snp_content( a_fp , a_snp ) :
     global g_s2e
-    dbase_root = "/data/snp_" + str( a_snp ).zfill(g_s2e['setup']['num_digits']) + "/"
-    xsnp = dict()
+    dbase_root = "/data/snp_" + str( a_snp ).zfill(g_s2e['setup']['num_digits']) + "/" 
+    xsnp = dict() 
     xsnp['Z']   = a_fp.get( dbase_root + 'Z' )   .value
     xsnp['T']   = a_fp.get( dbase_root + 'T' )   .value
     xsnp['ff']  = a_fp.get( dbase_root + 'ff' )  .value
     xsnp['xyz'] = a_fp.get( dbase_root + 'xyz' ) .value
     xsnp['r']   = a_fp.get( dbase_root + 'r' )   .value
-    N = xsnp['Z'].size
-    xsnp['q'] = numpy.array( [ xsnp['ff'][ numpy.find( xsnp['T'] == x ) , 0 ]  for x in xsnp['xyz'] ] ) .reshape(N,)
+    N = xsnp['Z'].size 
+    xsnp['q'] = numpy.array( [ xsnp['ff'][ pylab.find( xsnp['T'] == x ) , 0 ]  for x in xsnp['xyz'] ] ) .reshape(N,)
     xsnp['snp'] = a_snp ;
 
     return xsnp
@@ -177,8 +177,8 @@ def f_load_sample( ) :
     xfp.close()
     sample['selZ'] = dict()
     for sel_Z in numpy.unique( sample['Z'] ) :
-        sample['selZ'][sel_Z] = numpy.find( sel_Z == sample['Z'] )
-    sample['N'] = len( sample['Z'] )
+        sample['selZ'][sel_Z] = pylab.find( sel_Z == sample['Z'] )
+    sample['N'] = len( sample['Z'] ) 
 
     g_s2e['sample'] = sample
 
@@ -203,7 +203,7 @@ def f_save_data( dset , data ) :
 def f_rotate_sample() :
     print '   quaternion to be set!!!'
     g_s2e['sample']['rot_quaternion'] = numpy.random.rand( 4 ) #  pylab.array([0,0,0,0])
-    g_s2e['sample']['rotmat'] = numpy.zeros((9,))
+    g_s2e['sample']['rotmat'] = pylab.zeros((9,))
     s2e_gen_randrot_quat( g_s2e['sample']['rot_quaternion'] ,  g_s2e['sample']['rotmat'] ) ;
     s2e_rand_orient( g_s2e['sample']['r'] , g_s2e['sample']['rotmat'] ) ;
 
@@ -220,15 +220,15 @@ def f_rotate_sample() :
 
 def s2e_gen_randrot_quat( quat , rotmat ) :
 
-        if ( 0 == quat[0] * quat[0] +
+        if ( 0 == quat[0] * quat[0] + 
                   quat[1] * quat[1] +
                   quat[2] * quat[2] +
                   quat[3] * quat[3] ) :
-            u0 = pylab.rand( 1 ) ; u1 = pylab.rand( 1 ) ; u2 = pylab.rand( 1 ) ;
-            q0 = numpy.sqrt(1-u0) * numpy.sin(2*numpy.pi*u1) ;
-            q1 = numpy.sqrt(1-u0) * numpy.cos(2*numpy.pi*u1) ;
-            q2 = numpy.sqrt(u0) * numpy.sin(2*numpy.pi*u2) ;
-            q3 = numpy.sqrt(u0) * numpy.cos(2*numpy.pi*u2) ;
+            u0 = pylab.rand( 1 ) ; u1 = pylab.rand( 1 ) ; u2 = pylab.rand( 1 ) ; 
+            q0 = pylab.sqrt(1-u0) * pylab.sin(2*pylab.pi*u1) ;
+            q1 = pylab.sqrt(1-u0) * pylab.cos(2*pylab.pi*u1) ;
+            q2 = pylab.sqrt(u0) * pylab.sin(2*pylab.pi*u2) ;
+            q3 = pylab.sqrt(u0) * pylab.cos(2*pylab.pi*u2) ;
 
             quat[0] = q0 ;
             quat[1] = q1 ;
@@ -259,14 +259,14 @@ def s2e_gen_randrot_quat( quat , rotmat ) :
 #    {
 #        for ( jj=0 ; jj < 3 ; jj++ )
 #        {
-#            printf( "% e % e % e\n" , rotmat[ii][jj*3+0] ,  rotmat[ii][jj*3+1] ,
+#            printf( "% e % e % e\n" , rotmat[ii][jj*3+0] ,  rotmat[ii][jj*3+1] , 
 #                                      rotmat[ii][jj*3+2] ) ;
 #        }
 #        printf("\n") ;
 
 #        for ( jj=0 ; jj < 3 ; jj++ )
 #        {
-#            printf( "% e % e % e\n" , invmat[ii][jj*3+0] ,  invmat[ii][jj*3+1] ,
+#            printf( "% e % e % e\n" , invmat[ii][jj*3+0] ,  invmat[ii][jj*3+1] , 
 #                                      invmat[ii][jj*3+2] ) ;
 #        }
 #        printf("\n\n\n") ;
@@ -282,7 +282,7 @@ def s2e_gen_randrot_quat( quat , rotmat ) :
 def s2e_rand_orient( r ,mat ) :
     N = r.shape[1]
 ###    print N
-    vv = numpy.zeros((3,0)) ;
+    vv = pylab.zeros((3,0)) ;
 
     for ii in range(N) :
         vv = r[ii,:]
@@ -299,8 +299,8 @@ def s2e_rand_orient( r ,mat ) :
 def f_system_setup() :
     global g_s2e
 
-    g_s2e['sys']['r'] = g_s2e['sample']['r'].copy()
-    g_s2e['sys']['q'] = numpy.zeros( g_s2e['sample']['Z'].shape )
+    g_s2e['sys']['r'] = g_s2e['sample']['r'].copy() 
+    g_s2e['sys']['q'] = pylab.zeros( g_s2e['sample']['Z'].shape )
     g_s2e['sys']['NE'] = g_s2e['sample']['Z'].copy()
     g_s2e['sys']['Z'] = g_s2e['sample']['Z']
     g_s2e['sys']['Nph'] = 1e99
@@ -310,24 +310,24 @@ def f_system_setup() :
 ##############################################################################
 
 def f_save_snp( a_snp ) :
-    global g_s2e
+    global g_s2e 
 
     g_s2e['sys']['xyz'] = f_dbase_Zq2id( g_s2e['sys']['Z'] , g_s2e['sys']['q'] )
-    g_s2e['sys']['T'] = numpy.sort( numpy.unique( g_s2e['sys']['xyz'] ) )
+    g_s2e['sys']['T'] = pylab.sort( pylab.unique( g_s2e['sys']['xyz'] ) )
     ff = numpy.zeros( ( len( g_s2e['sys']['T'] ) , len( g_dbase['halfQ'] ) ) )
     for ii in range( len( g_s2e['sys']['T'] ) ) :
         ff[ii,:] =  g_dbase['ff'][g_s2e['sys']['T'][ii].astype(int),:].copy()
-###        print g_s2e['sys']['T'][ii].astype(int) , ff[ii,:]
+###        print g_s2e['sys']['T'][ii].astype(int) , ff[ii,:] 
 
     pmi_file = g_s2e['setup']['pmi_out']
     grp = '/data/snp_' + str( a_snp ).zfill( g_s2e['setup']['num_digits'] )
 ###    print pmi_file , grp
     xfp  = h5py.File( pmi_file , "a" )
     try:
-        grp_hist_parent = xfp.create_group( '/data' )
+        grp_hist_parent = xfp.create_group( '/data' ) 
     except:
         1
-    grp_hist_parent = xfp.create_group( grp )
+    grp_hist_parent = xfp.create_group( grp ) 
     xfp[ grp + '/Z' ]   = g_s2e['sys']['Z']
     xfp[ grp + '/T' ]   = g_s2e['sys']['T'] .astype(numpy.int32)
     xfp[ grp + '/xyz' ] = g_s2e['sys']['xyz'] .astype(numpy.int32)
@@ -349,21 +349,21 @@ def f_save_snp( a_snp ) :
 
 
 def f_num_snp_xxx( all_real ) :
-    global g_s2e
+    global g_s2e 
     xfp  = h5py.File( g_s2e['prj'] + '/pmi/pmi_out_' + str( all_real[0] ).zfill(g_s2e['setup']['num_digits'])  + '.h5' , "r" )
-    cc = 1
+    cc = 1 
     while 1 :
         if not  xfp.get( "/data/snp_" + str( cc ).zfill(g_s2e['setup']['num_digits']) )  :
             xfp.close()
-            return cc - 1
+            return cc - 1 
         cc = cc + 1
 
-#        try:
+#        try: 
 #            if type( a_fp.get( "/data/snp_" + str( cc ).zfill(NUM_DIGITS) + '/Nph' ) ) == 'NoneType' :
 #                print 'N'
 #            else :
 #                print 1
-#
+#       
 #        except:
 #            return cc
 
@@ -374,7 +374,7 @@ def f_load_pulse( a_prop_out ) :
     global g_s2e
 
     xfp  = h5py.File( a_prop_out , "r" )
-    g_s2e['pulse'] = dict()
+    g_s2e['pulse'] = dict() 
     g_s2e['pulse']['xFWHM']   = xfp.get( '/misc/xFWHM' )   .value
     g_s2e['pulse']['yFWHM']   = xfp.get( '/misc/yFWHM' )   .value
     g_s2e['pulse']['nSlices']   = xfp.get( 'params/Mesh/nSlices' )   .value
@@ -401,21 +401,21 @@ def f_load_pulse( a_prop_out ) :
     dy = ( g_s2e['pulse']['yMax'] - g_s2e['pulse']['yMin'] ) / ( g_s2e['pulse']['ny'] * 1.0 )
     Eph = g_s2e['pulse']['photonEnergy'] * 1.0 ;
 
-    NPH = 0
+    NPH = 0 
     for tt in range( g_s2e['pulse']['nSlices'] ) :
-        NPH += ( sel_pixV[tt,0]**2 + sel_pixV[tt,1]**2 + sel_pixH[tt,0]**2 + sel_pixH[tt,1]**2 )
-
+        NPH += ( sel_pixV[tt,0]**2 + sel_pixV[tt,1]**2 + sel_pixH[tt,0]**2 + sel_pixH[tt,1]**2 ) 
+        
     NPH *= 1e6 *  dt * g_s2e['pulse']['xFWHM'] * g_s2e['pulse']['yFWHM'] / ( Eph * 1.6022e-19 )
 
     g_s2e['pulse']['sel_int'] = numpy.ones( (g_s2e['steps'],) ) * ( NPH / 100.0 )
 
 #    print g_s2e['pulse']['arrEhor'].shape , dt , dx , dy ,  NPH
 
-#    print g_s2e['pulse']['sel_int']
+#    print g_s2e['pulse']['sel_int'] 
 
 
 
-#    g_s2e_pulse['sliceMax']   = g_s2e_pulse[''] - g_s2e_pulse['']
+#    g_s2e_pulse['sliceMax']   = g_s2e_pulse[''] - g_s2e_pulse[''] 
 #    g_s2e_pulse['sliceMin']   = 0
 #    g_s2e_pulse['sliceDelta']   = g_s2e_pulse['']  / ( g_s2e_pulse[''] - 1.0 )
 
@@ -431,7 +431,7 @@ def f_load_pulse( a_prop_out ) :
     return
 
 
-#    /**  Some transformation  and  derived useful parameters  */
+#    /**  Some transformation  and  derived useful parameters  */ 
 #    data_prop_out.sliceMax = data_prop_out.sliceMax - data_prop_out.sliceMin ;
 #    data_prop_out.sliceMin = 0 ;
 #
@@ -445,13 +445,13 @@ def f_load_pulse( a_prop_out ) :
 
 #    data_prop_out.xMax =  ( data_prop_out.xMax - data_prop_out.xMin ) / 2.0 ;
 #    data_prop_out.xMin = - data_prop_out.xMax ;
-#    data_prop_out.xDelta = ( data_prop_out.xMax - data_prop_out.xMin ) /
+#    data_prop_out.xDelta = ( data_prop_out.xMax - data_prop_out.xMin ) / 
 #                           (double) (data_prop_out.nx - 1 ) ;
 
 #    data_prop_out.yMax =  ( data_prop_out.yMax - data_prop_out.yMin ) / 2.0 ;
 #
 #    data_prop_out.yMin = - data_prop_out.yMax ;
-#    data_prop_out.yDelta = ( data_prop_out.yMax - data_prop_out.yMin ) /
+#    data_prop_out.yDelta = ( data_prop_out.yMax - data_prop_out.yMin ) / 
 #                           (double) ( data_prop_out.ny - 1 ) ;
 
 #    /**  Selecting center (ot highest fluence) pixel */
@@ -471,8 +471,8 @@ def f_eval_disp( a_snp , a_r0 , a_sample ) :
     for sel_Z in a_sample['selZ'].keys() :
         dr = a_snp['r'][a_sample['selZ'][sel_Z],:] - a_r0[a_sample['selZ'][sel_Z],:]
         all_disp[cc] = numpy.mean( numpy.sqrt( numpy.sum( dr * dr , axis = 1 ) ) ) / 1e-10
-        cc = cc + 1
-    return all_disp
+        cc = cc + 1 
+    return all_disp 
 
 
 ##############################################################################
@@ -485,8 +485,8 @@ def f_eval_numE( a_snp , a_sample ) :
     cc = 0 ;
     for sel_Z in a_sample['selZ'].keys() :
         all_numE[cc] = numpy.mean( a_snp['q'][a_sample['selZ'][sel_Z]] )
-        cc = cc + 1
-    return all_numE
+        cc = cc + 1 
+    return all_numE 
 
 
 ##############################################################################
@@ -496,7 +496,7 @@ def f_md_step( r , v , m , dt ) :
     r = r.copy()
     v = v.copy()
     a = ( force( config , param ) + external_force( config , param ) ) / m
-    r = r + v*dt + 0.5*a*dt**2.0
+    r = r + v*dt + 0.5*a*dt**2.0 
     config['r'] = r
     an = ( force( config , param ) + external_force( config , param ) ) / m
     v = v + 0.5* (a+an) * dt
@@ -533,7 +533,7 @@ def load_ff_database():
     # INTERNAL NOTE #   cat ff_all.dat |while read x; do echo '[' `echo $x|sed s/\ /\ ,\ /g` '] ,'; done > ff_all.dat--numpy_array
 
     dbase = numpy.array(
-            [
+            [ 
 
 [ 0.00000000 , 1.00000000 , 2.00000000 , 3.00000000 , 4.00000000 , 5.00000000 , 6.00000000 , 7.00000000 , 8.00000000 , 9.00000000 , 10.00000000 , 11.00000000 , 12.00000000 , 13.00000000 , 14.00000000 , 15.00000000 , 16.00000000 , 17.00000000 , 18.00000000 , 19.00000000 , 20.00000000 , 21.00000000 , 22.00000000 , 23.00000000 , 24.00000000 , 25.00000000 , 26.00000000 , 27.00000000 , 28.00000000 , 29.00000000 , 30.00000000 , 31.00000000 , 32.00000000 , 33.00000000 , 34.00000000 , 35.00000000 , 36.00000000 , 37.00000000 , 38.00000000 , 39.00000000 , 40.00000000 , 41.00000000 , 42.00000000 , 43.00000000 , 44.00000000 , 45.00000000 , 46.00000000 , 47.00000000 , 48.00000000 , 49.00000000 , 50.00000000 , 51.00000000 , 52.00000000 , 53.00000000 , 54.00000000 , 55.00000000 , 56.00000000 , 57.00000000 , 58.00000000 , 59.00000000 , 60.00000000 , 61.00000000 , 62.00000000 , 63.00000000 , 64.00000000 , 65.00000000 , 66.00000000 , 67.00000000 , 68.00000000 , 69.00000000 , 70.00000000 , 71.00000000 , 72.00000000 , 73.00000000 , 74.00000000 , 75.00000000 , 76.00000000 , 77.00000000 , 78.00000000 , 79.00000000 , 80.00000000 , 81.00000000 , 82.00000000 , 83.00000000 , 84.00000000 , 85.00000000 , 86.00000000 , 87.00000000 , 88.00000000 , 89.00000000 , 90.00000000 , 91.00000000 , 92.00000000 , 93.00000000 , 94.00000000 , 95.00000000 , 96.00000000 , 97.00000000 , 98.00000000 , 99.00000000 , 100.00000000 ] ,
 [ 0.10000000 , 0.99501869 , 1.99589518 , 2.97109688 , 3.97186951 , 4.97376297 , 5.97710119 , 6.97983622 , 7.98198772 , 8.98370590 , 9.98510701 , 10.95863233 , 11.95411841 , 12.94697205 , 13.94883406 , 14.95181561 , 15.95472957 , 16.95738950 , 17.95978500 , 18.92347251 , 19.91505510 , 20.92051573 , 21.92515832 , 22.92918270 , 23.93272217 , 24.93587259 , 25.93870298 , 26.94126494 , 27.94359833 , 28.94573704 , 29.94770446 , 30.93632139 , 31.93476608 , 32.93527378 , 33.93636001 , 34.93766419 , 35.93905535 , 36.89860308 , 37.88700546 , 38.89138618 , 39.89563164 , 40.89945789 , 41.90291796 , 42.90607326 , 43.90897276 , 44.91165362 , 45.91414473 , 46.91646886 , 47.91864602 , 48.90557917 , 49.90242200 , 50.90177205 , 51.90202494 , 52.90273336 , 53.90370475 , 54.85504426 , 55.83966594 , 56.84315999 , 57.84642273 , 58.84948038 , 59.85237085 , 60.85511933 , 61.85773122 , 62.86022128 , 63.86261346 , 64.86490228 , 65.86709654 , 66.86920692 , 67.87124385 , 68.87315927 , 65.70484550 , 70.87732340 , 71.87995066 , 72.88245856 , 73.88481283 , 74.88702796 , 75.88912120 , 76.89111007 , 77.89300402 , 78.89481198 , 79.89654525 , 80.88208473 , 81.87752692 , 82.87569085 , 83.87492735 , 84.87474801 , 85.87494376 , 86.82204392 , 87.80407602 , 88.80756308 , 89.81077554 , 90.81379738 , 91.81664367 , 92.81934342 , 93.82192852 , 94.82440199 , 95.82677312 , 96.82905187 , 97.83125374 , 98.83338014 , 99.83543301 ] ,
@@ -687,7 +687,7 @@ if __name__ == '__main__':
         f_save_info()
 
         f_load_pulse( g_s2e['prop_out'] )
-#            print g_s2e['pulse']['xFWHM']
+#            print g_s2e['pulse']['xFWHM'] 
 
         f_load_sample()
         f_rotate_sample()
